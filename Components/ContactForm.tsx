@@ -22,15 +22,19 @@ export const ContactForm = (props: Props) => {
         <input type="hidden" name="form-name" value="contact" />
         <FormControl id="name">
           <FormLabel>Name</FormLabel>
-          <Input />
+          <Input name="name" required />
         </FormControl>
         <FormControl id="email">
           <FormLabel>Email address</FormLabel>
-          <Input type="email" />
+          <Input type="email" name="email" required />
         </FormControl>
         <FormControl id="message">
           <FormLabel>Message</FormLabel>
-          <Textarea placeholder="What's on your mind?" />
+          <Textarea
+            name="message"
+            required
+            placeholder="What's on your mind?"
+          />
         </FormControl>
         <Button mt={4} bgColor="brand" color="white" type="submit">
           Submit
