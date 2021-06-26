@@ -13,7 +13,12 @@ interface Props {}
 export const ContactForm = (props: Props) => {
   return (
     <Box>
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        method="POST"
+        action="/form-success"
+        data-netlify="true"
+      >
         <FormControl id="name">
           <FormLabel>Name</FormLabel>
           <Input />
