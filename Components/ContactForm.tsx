@@ -19,6 +19,7 @@ export const ContactForm = (props: Props) => {
         action="/form-success"
         data-netlify="true"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <FormControl id="name">
           <FormLabel>Name</FormLabel>
           <Input />
