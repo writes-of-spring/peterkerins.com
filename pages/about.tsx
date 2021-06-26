@@ -23,7 +23,7 @@ const About = (props: Props) => {
         </Text>
 
         <Text>
-          If you're in need of my services, feel free to contact me for a
+          If you&apos;re in need of my services, feel free to contact me for a
           consultation.
         </Text>
       </Box>
