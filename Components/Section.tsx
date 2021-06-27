@@ -8,7 +8,7 @@ interface Props {
 
 const Section = ({ title, children }: Props) => {
   return (
-    <Box as="section" marginBlockEnd={1}>
+    <Box as="section" marginBlock={8}>
       <Heading>{title}</Heading>
       {children}
     </Box>
