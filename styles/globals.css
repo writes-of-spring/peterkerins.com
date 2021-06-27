@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+.nav-link {
+  color: hsla(0, 0%, 0%, 0.8);
+  font-size: 1.2em;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #339999;
+  text-decoration: underline;
+}
+
+.active-link {
+  color: #339999;
+}
