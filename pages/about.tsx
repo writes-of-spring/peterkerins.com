@@ -28,7 +28,12 @@ const About = (props: Props) => {
         </Text>
       </Box>
       <Box flexGrow={1} flexBasis={500} borderRadius="2xl" overflow="hidden">
-        <Image src={profilePic} placeholder="blur" alt="Peter Kerins" />
+        <Image
+          priority
+          src={profilePic}
+          placeholder="blur"
+          alt="Peter Kerins"
+        />
       </Box>
     </Flex>
   );

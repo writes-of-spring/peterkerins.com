@@ -29,8 +29,7 @@ export const Service = ({ service }: Props) => {
         <Image
           src={service.image}
           alt={service.imageAlt}
-          // width={640}
-          // height={360}
+          priority
           placeholder="blur"
         />
       </Box>
