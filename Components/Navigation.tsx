@@ -6,14 +6,20 @@ interface Props {}
 
 const Navigation = (props: Props) => {
   return (
-    <Flex maxWidth="7xl" mx="auto" my={4} alignContent="center">
-      <Heading>
+    <Flex
+      maxWidth="7xl"
+      mx="auto"
+      my={4}
+      alignContent="center"
+      alignItems="center"
+    >
+      <Heading fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}>
         <Link href="/">
           <a className="nav-link">Peter Kerins</a>
         </Link>
       </Heading>
       <Spacer />
-      <Stack direction="row" gridGap="1em">
+      <Stack direction="row">
         <ActiveLink href="/">
           <a>Home</a>
         </ActiveLink>
