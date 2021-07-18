@@ -6,10 +6,14 @@ interface Props {}
 
 const About = (props: Props) => {
   return (
-    <Flex wrap="wrap-reverse" gridGap="2em" alignItems="center">
-      <Box flexGrow={1} flexBasis={500} gridGap="2em" alignItems="center">
-        <Heading>Peter Kerins</Heading>
-        <Heading>Cork based web developer.</Heading>
+    <Flex wrap="wrap-reverse" gridGap="2em" alignItems="center" pb={8}>
+      <Box flexGrow={1} flexBasis={400} gridGap="2em" alignItems="center">
+        <Heading mb={2} as="h2">
+          Peter Kerins
+        </Heading>
+        <Heading mb={4} as="h3" size="lg">
+          Cork based web developer.
+        </Heading>
         <Text>
           Graduated from MSc Interactive Media in 2015. Since then I spent a few
           years working in Munich for a Werbeagentur as a developer. During my
@@ -27,7 +31,7 @@ const About = (props: Props) => {
           consultation.
         </Text>
       </Box>
-      <Box flexGrow={1} flexBasis={500} borderRadius="2xl" overflow="hidden">
+      <Box flexGrow={1} flexBasis={400} borderRadius="2xl" overflow="hidden">
         <Image
           priority
           src={profilePic}

@@ -9,7 +9,9 @@ interface Props {
 const Section = ({ title, children }: Props) => {
   return (
     <Box as="section" marginBlock={8}>
-      <Heading>{title}</Heading>
+      <Heading as="h3" size="2xl" mb={8}>
+        {title}
+      </Heading>
       {children}
     </Box>
   );

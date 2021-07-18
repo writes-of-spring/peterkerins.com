@@ -18,12 +18,12 @@ export const Service = ({ service }: Props) => {
       alignItems="center"
     >
       <Box className="service-information" flexBasis={400} flexGrow={1}>
-        <Container>
+        <Box maxW="xl">
           <Heading as="h3" size="lg">
             {service.title}
           </Heading>
           <Text>{service.description}</Text>
-        </Container>
+        </Box>
       </Box>
       <Box position="relative" flexBasis="400">
         <Image
