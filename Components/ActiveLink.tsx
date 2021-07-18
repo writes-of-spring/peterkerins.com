@@ -2,22 +2,28 @@ import { useRouter } from "next/router";
 import NextLink, { LinkProps } from "next/link";
 
 import React, { Children } from "react";
+import { Link } from "@chakra-ui/react";
 
-interface Props extends LinkProps {
-  children: React.ReactElement;
+interface Props {
+  href: string;
+  label: string;
 }
 
-const ActiveLink = ({ children, ...props }: Props) => {
-  const { pathname } = useRouter();
-  let className = "nav-link";
-  if (pathname === props.href) {
-    className = `${className} active-link`;
-  }
+function ActiveLink({ href, label }: Props) {
+  const router = useRouter();
+  const isActive = router.asPath === href;
   return (
-    <NextLink {...props}>
-      {React.cloneElement(children, { className })}
+    <NextLink href={href} passHref>
+      <Link
+        fontSize={["lg", "xl"]}
+        _hover={{ color: "brand" }}
+        _focus={{ color: "brand" }}
+        color={isActive ? "brand" : "inherit"}
+      >
+        {label}
+      </Link>
     </NextLink>
   );
-};
+}
 
 export default ActiveLink;
