@@ -10,22 +10,23 @@ const Banner = () => {
       left="50%"
       right="50%"
       marginInline="-50vw"
-      bgColor="#339999"
+      bgColor="brand"
       mt="-1"
       mb="1"
     >
       <Box
-        maxW="4xl"
+        maxW="5xl"
         margin="0 auto"
         height="100%"
         d="flex"
         alignItems="center"
-        p="1"
+        p="4"
         color="white"
       >
         <Heading>
-          Cork Based Web Developer, specialising in: web development, ecommerce,
-          graphic design, branding &amp; logo design, and the JAMstack
+          <s>Cork</s> Kilkenny Based Web Developer, specialising in: web
+          development, ecommerce, graphic design, branding &amp; logo design,
+          and the JAMstack
         </Heading>
       </Box>
     </Box>
