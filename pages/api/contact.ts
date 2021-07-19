@@ -26,15 +26,16 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   (async () => {
     try {
       await mail.send(data);
+      console.log("Email sent");
+      res.status(200).json({ status: "OK" });
     } catch (error) {
       console.error(error);
       if (error.response) {
         console.error(error.response.body);
+        res.status(500).json({ status: error.response.body });
       }
     }
   })();
-
-  res.status(200).json({ status: "OK" });
 };
 
 export default contact;
