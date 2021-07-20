@@ -3,11 +3,12 @@ import {
   Box,
   Button,
   FormControl,
-  FormHelperText,
+  FormErrorMessage,
   FormLabel,
   Input,
   Textarea,
   useToast,
+  VStack,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 interface Props {}
@@ -57,28 +58,30 @@ export const ContactForm = (props: Props) => {
   }
   return (
     <Box>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="hidden" name="form-name" value="contact" />
-        <FormControl id="name" isInvalid={!!errors?.name}>
-          <FormLabel>Name</FormLabel>
-          <Input {...register("name", { required: "Name is requred" })} />
-        </FormControl>
-        <FormControl id="email" isInvalid={!!errors.email}>
-          <FormLabel>Email address</FormLabel>
-          <Input
-            type="email"
-            {...register("email", { required: "Email is required" })}
-            required
-          />
-        </FormControl>
-        <FormControl id="message" isInvalid={!!errors.message}>
-          <FormLabel>Message</FormLabel>
-          <Textarea
-            {...register("message", { required: true })}
-            required
-            placeholder="What's on your mind?"
-          />
-        </FormControl>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <VStack spacing={4}>
+          <FormControl id="name" isInvalid={!!errors?.name} isRequired>
+            <FormLabel>Name</FormLabel>
+            <Input {...register("name", { required: "Name is requred" })} />
+            <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
+          </FormControl>
+          <FormControl id="email" isInvalid={!!errors.email} isRequired>
+            <FormLabel>Email address</FormLabel>
+            <Input
+              type="email"
+              {...register("email", { required: "Email is required" })}
+            />
+            <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
+          </FormControl>
+          <FormControl id="message" isInvalid={!!errors.message} isRequired>
+            <FormLabel>Message</FormLabel>
+            <Textarea
+              {...register("message", { required: true })}
+              placeholder="What's on your mind?"
+            />
+            <FormErrorMessage>{errors.message?.message}</FormErrorMessage>
+          </FormControl>
+        </VStack>
         <Button mt={4} bgColor="brand" color="white" type="submit">
           Submit
         </Button>
