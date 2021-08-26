@@ -16,7 +16,7 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Box as="main" maxW="5xl" mx="auto" px={4}>
+      <Box as="main" maxW="5xl" mx="auto" px="4" mb="4">
         <Navigation />
         <Component {...pageProps} />
       </Box>

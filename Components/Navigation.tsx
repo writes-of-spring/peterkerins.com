@@ -1,13 +1,13 @@
 import React from "react";
 import NextLink from "next/link";
-import { Heading, Flex, Spacer, Stack, Link } from "@chakra-ui/react";
+import { Flex, Heading, Link, Spacer, Stack } from "@chakra-ui/react";
 import ActiveLink from "./ActiveLink";
 interface Props {}
 
 const Navigation = (props: Props) => {
   return (
     <Flex
-      maxWidth="5xl"
+      // maxWidth="5xl"
       mx="auto"
       my={4}
       alignContent="center"
@@ -15,7 +15,9 @@ const Navigation = (props: Props) => {
     >
       <Heading fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}>
         <NextLink href={"/"} passHref>
-          <Link _hover={{ textDecoration: "none" }}>Peter Kerins</Link>
+          <Link _hover={{ textDecoration: "none", color: "brand" }}>
+            Peter Kerins
+          </Link>
         </NextLink>
       </Heading>
       <Spacer />
