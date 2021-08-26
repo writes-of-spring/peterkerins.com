@@ -1,14 +1,14 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, BoxProps, Heading } from "@chakra-ui/react";
 import React from "react";
 
-interface Props {
+interface Props extends BoxProps {
   title: string;
   children: React.ReactNode;
 }
 
-const Section = ({ title, children }: Props) => {
+const Section = ({ title, children, ...boxProps }: Props) => {
   return (
-    <Box as="section" marginBlock={8}>
+    <Box as="section" mt="8" mb="8" {...boxProps}>
       <Heading as="h3" size="2xl" mb={8}>
         {title}
       </Heading>
