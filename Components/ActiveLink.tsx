@@ -16,7 +16,7 @@ function ActiveLink({ href, label }: Props) {
     <NextLink href={href} passHref>
       <Link
         fontSize={["lg", "xl"]}
-        _hover={{ color: "brand" }}
+        _hover={{ color: "brand", textDecor: "underline" }}
         _focus={{ color: "brand" }}
         color={isActive ? "brand" : "inherit"}
       >
