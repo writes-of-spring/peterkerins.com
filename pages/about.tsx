@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Box } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import profilePic from "../public/me.jpg";
@@ -8,11 +8,8 @@ const About = (props: Props) => {
   return (
     <Flex wrap="wrap-reverse" gridGap="2em" alignItems="center" pb={8}>
       <Box flexGrow={1} flexBasis={400} gridGap="2em" alignItems="center">
-        <Heading mb={2} as="h2">
-          Peter Kerins
-        </Heading>
-        <Heading mb={4} as="h3" size="lg">
-          Cork based web developer.
+        <Heading mb={4} as="h2" size="lg">
+          <s>Cork</s> Kilkenny based web developer.
         </Heading>
         <Text>
           Graduated from MSc Interactive Media in 2015. Since then I spent a few
