@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import mail from "@sendgrid/mail";
+import mail, { ResponseError } from "@sendgrid/mail";
 
 if (process.env.SENDGRID_API_KEY) {
   mail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -26,13 +26,10 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   (async () => {
     try {
       await mail.send(data);
-      console.log("Email sent");
       res.status(200).json({ status: "OK" });
     } catch (error) {
-      console.error(error);
-      if (error.response) {
-        console.error(error.response.body);
-        res.status(500).json({ status: error.response.body });
+      if (error instanceof ResponseError) {
+        res.status(500).json({ status: error?.response?.body });
       }
     }
   })();
