@@ -1,10 +1,13 @@
 interface Props {}
 import { Box, Container, Heading, Text } from "@chakra-ui/react";
 import { ContactForm } from "Components/ContactForm";
+import Seo from "Components/Seo";
 import * as React from "react";
+
 const Contact = (props: Props) => {
   return (
     <Container>
+      <Seo title="Contact" />
       <Heading mb="2">Contact Me</Heading>
       <Text>
         If you&apos;re in need of web development, web design or branding

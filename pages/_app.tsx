@@ -12,9 +12,14 @@ const theme = extendTheme({
     brand: "#339999",
   },
 });
+import Head from "next/head";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
+      <Head>
+        <title>Peter Kerins | Web Development</title>
+        <meta name="theme-color" content="#339999" />
+      </Head>
       <Box as="main" maxW="5xl" mx="auto" px="4" mb="4">
         <Navigation />
         <Component {...pageProps} />

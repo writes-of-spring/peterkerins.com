@@ -2,11 +2,13 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import profilePic from "../public/me.jpg";
+import Seo from "Components/Seo";
 interface Props {}
 
 const About = (props: Props) => {
   return (
     <Flex wrap="wrap-reverse" gridGap="2em" alignItems="center" pb={8}>
+      <Seo title="About" />
       <Box flexGrow={1} flexBasis={400} gridGap="2em" alignItems="center">
         <Heading mb={4} as="h2" size="lg">
           <s>Cork</s> Kilkenny based web developer.
