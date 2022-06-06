@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import BrandingAndLogo from "../public/services/branding-and-logo.png";
 import WebDesign from "../public/services/web-design.png";
 import WebDevelopment from "../public/services/web-development.png";
