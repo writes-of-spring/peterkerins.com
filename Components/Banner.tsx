@@ -14,19 +14,10 @@ const Banner = () => {
       mt="-1"
       mb="1"
     >
-      <Box
-        maxW="5xl"
-        margin="0 auto"
-        height="100%"
-        d="flex"
-        alignItems="center"
-        p="4"
-        color="white"
-      >
+      <Box maxW="5xl" margin="0 auto" height="100%" display="flex" alignItems="center" p="4" color="white">
         <Heading>
-          <s>Cork</s> Kilkenny Based Web Developer, specialising in: web
-          development, ecommerce, graphic design, branding &amp; logo design,
-          and the JAMstack
+          <s>Cork</s> Kilkenny Based Web Developer, specialising in: web development, ecommerce, graphic design,
+          branding &amp; logo design, and the JAMstack
         </Heading>
       </Box>
     </Box>

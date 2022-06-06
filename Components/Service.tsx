@@ -12,7 +12,7 @@ export const Service = ({ service }: Props) => {
   return (
     <Box
       justifyContent="center"
-      d="flex"
+      display="flex"
       flexWrap="wrap-reverse"
       _even={{ flexDirection: "row-reverse" }}
       alignItems="center"
@@ -26,12 +26,7 @@ export const Service = ({ service }: Props) => {
         </Box>
       </Box>
       <Box position="relative" flexBasis="400">
-        <Image
-          src={service.image}
-          alt={service.imageAlt}
-          priority
-          placeholder="blur"
-        />
+        <Image src={service.image} alt={service.imageAlt} priority placeholder="blur" />
       </Box>
     </Box>
   );
