@@ -1,11 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import mail, { ResponseError } from "@sendgrid/mail";
+import nodemailer from "nodemailer";
 
-if (process.env.SENDGRID_API_KEY) {
-  mail.setApiKey(process.env.SENDGRID_API_KEY);
-} else {
-  throw new Error("SENDGRID API KEY NOT FOUND");
-}
+let transporter = nodemailer.createTransport({
+  service: "FastMail",
+  auth: {
+    user: "hello@peterkerins.com",
+    pass: process.env.FASTMAIL,
+  },
+});
+// if (process.env.SENDGRID_API_KEY) {
+//   mail.setApiKey(process.env.SENDGRID_API_KEY);
+// } else {
+//   throw new Error("SENDGRID API KEY NOT FOUND");
+// }
 
 const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = JSON.parse(req.body);
@@ -15,6 +22,7 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
     Email: ${body.email}\r\n
     Message: ${body.message}
   `;
+  console.log(message);
   const data = {
     to: "hello@peterkerins.com",
     from: "hello@peterkerins.com",
@@ -23,16 +31,15 @@ const contact = async (req: NextApiRequest, res: NextApiResponse) => {
     html: message.replace(/\r\n/g, "<br />"),
   };
 
-  (async () => {
-    try {
-      await mail.send(data);
-      res.status(200).json({ status: "OK" });
-    } catch (error) {
-      if (error instanceof ResponseError) {
-        res.status(500).json({ status: error?.response?.body });
-      }
+  try {
+    let mail = await transporter.sendMail(data);
+    if (mail) {
+      res.status(200).json({ success: true });
     }
-  })();
+  } catch (error) {
+    console.error(error);
+    res.status(500).json(error);
+  }
 };
 
 export default contact;
