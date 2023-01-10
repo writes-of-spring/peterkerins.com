@@ -1,30 +1,25 @@
 import type { AppProps } from "next/app";
-import {
-  Box,
-  ChakraProvider,
-  extendTheme,
-  ThemeExtension,
-} from "@chakra-ui/react";
 import { Navigation } from "../Components/Navigation";
 import React from "react";
-const theme = extendTheme({
-  colors: {
-    brand: "#339999",
-  },
-});
+
+import "../styles/globals.css";
 import Head from "next/head";
+import Footer from "Components/Footer";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
+    <>
       <Head>
         <title>Peter Kerins | Web Development</title>
         <meta name="theme-color" content="#339999" />
       </Head>
-      <Box as="main" maxW="5xl" mx="auto" px="4" mb="4">
+      <div className="px-4 sm:px-0">
         <Navigation />
+      </div>
+      <main className="sm:px-0">
         <Component {...pageProps} />
-      </Box>
-    </ChakraProvider>
+      </main>
+      <Footer />
+    </>
   );
 }
 export default MyApp;

@@ -28,7 +28,7 @@ export const services: Service[] = [
   {
     image: WebDevelopment,
     description:
-      "Offering a full service of web development to suit your needs. Websites aren’t one size fits all, and neither should yours be. Specialising in react and typescript we can get you a powerful website up and running",
+      "Offering a full service of web development to suit your needs. Websites aren't one size fits all, and neither should yours be. Specialising in react and typescript we can get you a powerful website up and running",
     title: "Web Development",
     imageAlt: "Web Development",
   },

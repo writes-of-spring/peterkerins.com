@@ -1,32 +1,22 @@
-import React from "react";
 import NextLink from "next/link";
-import { Flex, Heading, Link, Spacer, Stack } from "@chakra-ui/react";
 import ActiveLink from "./ActiveLink";
 interface Props {}
 
 const Navigation = (props: Props) => {
   return (
-    <Flex
-      // maxWidth="5xl"
-      mx="auto"
-      my={4}
-      alignContent="center"
-      alignItems="center"
-    >
-      <Heading fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}>
-        <NextLink href={"/"} passHref>
-          <Link _hover={{ textDecoration: "none", color: "brand" }}>
-            Peter Kerins
-          </Link>
+    <nav className="mx-auto container my-4 flex content-center items-baseline max-w-7xl">
+      <h1 className="font-semibold text-3xl md:text-4xl lg:text-5xl">
+        <NextLink href={"/"} className="hover:no-underline hover:text-brand">
+          Peter Kerins
         </NextLink>
-      </Heading>
-      <Spacer />
-      <Stack direction="row" spacing="4">
+      </h1>
+      <div className="flex-grow" />
+      <div className="flex space-x-4">
         <ActiveLink href="/" label="Home" />
         <ActiveLink label="About" href="/about" />
         <ActiveLink label="Contact" href="/contact" />
-      </Stack>
-    </Flex>
+      </div>
+    </nav>
   );
 };
 

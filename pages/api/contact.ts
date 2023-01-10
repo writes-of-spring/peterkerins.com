@@ -8,11 +8,6 @@ let transporter = nodemailer.createTransport({
     pass: process.env.FASTMAIL,
   },
 });
-// if (process.env.SENDGRID_API_KEY) {
-//   mail.setApiKey(process.env.SENDGRID_API_KEY);
-// } else {
-//   throw new Error("SENDGRID API KEY NOT FOUND");
-// }
 
 const contact = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = JSON.parse(req.body);

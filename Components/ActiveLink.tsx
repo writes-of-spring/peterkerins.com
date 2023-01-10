@@ -1,8 +1,5 @@
+import NextLink from "next/link";
 import { useRouter } from "next/router";
-import NextLink, { LinkProps } from "next/link";
-
-import React, { Children } from "react";
-import { Link } from "@chakra-ui/react";
 
 interface Props {
   href: string;
@@ -13,15 +10,13 @@ function ActiveLink({ href, label }: Props) {
   const router = useRouter();
   const isActive = router.asPath === href;
   return (
-    <NextLink href={href} passHref>
-      <Link
-        fontSize={["lg", "xl"]}
-        _hover={{ color: "brand", textDecor: "underline" }}
-        _focus={{ color: "brand" }}
-        color={isActive ? "brand" : "inherit"}
-      >
-        {label}
-      </Link>
+    <NextLink
+      href={href}
+      className={`text-lg md:text-xl hover:text-brand hover:underline focus:text-brand ${
+        isActive ? "text-brand" : "text-inherit"
+      }`}
+    >
+      {label}
     </NextLink>
   );
 }
