@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import profilePic from "../public/me.jpg";
-import Seo from "Components/Seo";
+import Seo from "components/Seo";
 interface Props {}
 
 const About = (props: Props) => {

@@ -1,8 +1,8 @@
-import { ContactForm } from "Components/ContactForm";
-import Section from "Components/Section";
-import { Services } from "Components/Services";
+import { ContactForm } from "components/ContactForm";
+import Section from "components/Section";
+import { Services } from "components/Services";
 import React from "react";
-import Banner from "../Components/Banner";
+import Banner from "components/Banner";
 export default function Home() {
   return (
     <div>

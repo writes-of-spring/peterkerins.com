@@ -1,6 +1,6 @@
 interface Props {}
-import { ContactForm } from "Components/ContactForm";
-import Seo from "Components/Seo";
+import { ContactForm } from "components/ContactForm";
+import Seo from "components/Seo";
 import * as React from "react";
 
 const Contact = (props: Props) => {

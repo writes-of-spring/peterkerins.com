@@ -1,10 +1,10 @@
 import type { AppProps } from "next/app";
-import { Navigation } from "../Components/Navigation";
+import { Navigation } from "../components/Navigation";
 import React from "react";
 
 import "../styles/globals.css";
 import Head from "next/head";
-import Footer from "Components/Footer";
+import Footer from "components/Footer";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
