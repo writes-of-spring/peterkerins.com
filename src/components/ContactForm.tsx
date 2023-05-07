@@ -1,8 +1,45 @@
-"use client";
 import React from "react";
-import { contact } from "@/actions/contact";
+import { redirect } from "next/navigation";
+import nodemailer from "nodemailer";
 
 interface Props {}
+
+let transporter = nodemailer.createTransport({
+  service: "FastMail",
+  auth: {
+    user: "hello@peterkerins.com",
+    pass: process.env.FASTMAIL,
+  },
+});
+
+const contact = async (form: FormData) => {
+  "use server";
+  const name = form.get("name");
+  const email = form.get("email");
+  const message = form.get("message");
+
+  const emailBody = `
+    Name: ${name}\r\n
+    Email: ${email}\r\n
+    Message: ${message}
+  `;
+  const data = {
+    to: "hello@peterkerins.com",
+    from: "hello@peterkerins.com",
+    subject: `New message from ${name}`,
+    text: emailBody,
+    html: emailBody.replace(/\r\n/g, "<br />"),
+  };
+
+  try {
+    let mail = await transporter.sendMail(data);
+    if (mail) {
+      redirect("/");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 export const ContactForm = (props: Props) => {
   return (
