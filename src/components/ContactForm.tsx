@@ -4,16 +4,17 @@ import nodemailer from "nodemailer";
 
 interface Props {}
 
-let transporter = nodemailer.createTransport({
-  service: "FastMail",
-  auth: {
-    user: "hello@peterkerins.com",
-    pass: process.env.FASTMAIL,
-  },
-});
-
 const contact = async (form: FormData) => {
   "use server";
+
+  let transporter = nodemailer.createTransport({
+    service: "FastMail",
+    auth: {
+      user: "hello@peterkerins.com",
+      pass: process.env.FASTMAIL,
+    },
+  });
+
   const name = form.get("name");
   const email = form.get("email");
   const message = form.get("message");
