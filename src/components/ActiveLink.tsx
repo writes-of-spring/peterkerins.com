@@ -9,7 +9,6 @@ interface Props {
 
 function ActiveLink({ href, label }: Props) {
   const pathName = usePathname();
-  console.log({ pathName, href });
   const isActive = pathName === href;
   return (
     <NextLink
