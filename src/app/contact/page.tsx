@@ -1,9 +1,6 @@
-interface Props {}
-
 import { ContactForm } from "@/components/ContactForm";
-import * as React from "react";
 
-const Contact = (props: Props) => {
+const Contact = () => {
   return (
     <>
       {/* <Seo title="Contact" /> */}
