@@ -1,8 +1,8 @@
-import { ContactForm } from "components/ContactForm";
-import Section from "components/Section";
-import { Services } from "components/Services";
-import React from "react";
-import Banner from "components/Banner";
+import Section from "@/components/Section";
+import Banner from "@/components/Banner";
+import { Services } from "@/components/Services";
+import { ContactForm } from "@/components/ContactForm";
+
 export default function Home() {
   return (
     <div>
@@ -18,3 +18,9 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata = {
+  title: {
+    absolute: "Peter Kerins | Web Developer",
+  },
+};

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import config from "../siteConfig";
+import config from "../../siteConfig";
 
 interface Props {
   title: string;

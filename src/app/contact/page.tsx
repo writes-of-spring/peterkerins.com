@@ -1,12 +1,12 @@
 interface Props {}
-import { ContactForm } from "components/ContactForm";
-import Seo from "components/Seo";
+
+import { ContactForm } from "@/components/ContactForm";
 import * as React from "react";
 
 const Contact = (props: Props) => {
   return (
     <>
-      <Seo title="Contact" />
+      {/* <Seo title="Contact" /> */}
       <div className="container mx-auto mt-24 max-w-7xl">
         <div className="grid md:grid-cols-2 w-full gap-8 md:gap-2">
           <div className="max-w-md mx-auto md:mx-0">
@@ -28,3 +28,7 @@ const Contact = (props: Props) => {
   );
 };
 export default Contact;
+
+export const metadata = {
+  title: "Contact",
+};

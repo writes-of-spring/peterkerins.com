@@ -1,5 +1,5 @@
-import { services } from "data/services";
 import Image from "next/image";
+import { services } from "@/data/services";
 interface Props {}
 
 export const Services = (props: Props) => {

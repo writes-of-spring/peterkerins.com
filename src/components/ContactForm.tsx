@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+// import "react-toastify/dist/ReactToastify.css";
 interface Props {}
 
 export const ContactForm = (props: Props) => {
@@ -18,46 +19,50 @@ export const ContactForm = (props: Props) => {
     },
   });
 
-  function onSubmit(data: { name: string; email: string; message: string }) {
-    fetch("/api/contact", {
-      method: "post",
-      body: JSON.stringify(data),
-    })
-      .then(function (response) {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
-        return response;
-      })
-      .then(function (response) {
-        toast.success("Message received", {
-          position: "bottom-right",
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-        reset();
-      })
-      .catch(function (error) {
-        toast.error("Something went wrong, let's try that again", {
-          position: "bottom-right",
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      });
-  }
+  // function onSubmit(data: { name: string; email: string; message: string }) {
+  //   fetch("/api/contact", {
+  //     method: "post",
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then(function (response) {
+  //       if (!response.ok) {
+  //         throw Error(response.statusText);
+  //       }
+  //       return response;
+  //     })
+  //     .then(function (response) {
+  //       toast.success("Message received", {
+  //         position: "bottom-right",
+  //         hideProgressBar: true,
+  //         closeOnClick: true,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         progress: undefined,
+  //         theme: "light",
+  //       });
+  //       reset();
+  //     })
+  //     .catch(function (error) {
+  //       toast.error("Something went wrong, let's try that again", {
+  //         position: "bottom-right",
+  //         hideProgressBar: true,
+  //         closeOnClick: true,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         progress: undefined,
+  //         theme: "light",
+  //       });
+  //     });
+  // }
+
   return (
     <>
       <div className="mx-auto max-w-lg lg:max-w-none">
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit((data) => {
+            alert(JSON.stringify(data));
+            return console.log(data);
+          })}
           className="grid grid-cols-1 gap-y-6"
         >
           <div>
@@ -133,7 +138,6 @@ export const ContactForm = (props: Props) => {
           </div>
         </form>
       </div>
-      <ToastContainer />
     </>
   );
 };

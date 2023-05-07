@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import profilePic from "../public/me.jpg";
-import Seo from "components/Seo";
+
+import Seo from "@/components/Seo";
+
 interface Props {}
 
 const About = (props: Props) => {
   return (
     <>
-      <Seo title="About" />
+      {/* <Seo title="About" /> */}
       {/* <article className="container mx-auto flex flex-wrap-reverse gap-8 items-center pb-8">
         <div className="flex-grow basis-96 gap-8 items-center">
           <h2 className="mb-4 text-3xl font-semibold">
@@ -69,8 +70,10 @@ const About = (props: Props) => {
           <Image
             className="absolute inset-0 h-full w-full object-cover "
             priority
-            src={profilePic}
-            placeholder="blur"
+            width={500}
+            height={500}
+            src={"/me.jpg"}
+            // placeholder="blur"
             alt="Peter Kerins"
           />
         </div>
@@ -79,3 +82,7 @@ const About = (props: Props) => {
   );
 };
 export default About;
+
+export const metadata = {
+  title: "About",
+};

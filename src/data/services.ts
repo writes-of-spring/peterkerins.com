@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
-import BrandingAndLogo from "../public/services/branding-and-logo.png";
-import WebDesign from "../public/services/web-design.png";
-import WebDevelopment from "../public/services/web-development.png";
+import BrandingAndLogo from "@/assets/services/branding-and-logo.png";
+import WebDesign from "@/assets/services/web-design.png";
+import WebDevelopment from "@/assets/services/web-development.png";
 
 export interface Service {
   image: StaticImageData;

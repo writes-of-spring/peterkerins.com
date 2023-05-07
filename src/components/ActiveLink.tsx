@@ -1,5 +1,6 @@
+"use client";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 interface Props {
   href: string;
@@ -7,8 +8,9 @@ interface Props {
 }
 
 function ActiveLink({ href, label }: Props) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const pathName = usePathname();
+  console.log({ pathName, href });
+  const isActive = pathName === href;
   return (
     <NextLink
       href={href}
